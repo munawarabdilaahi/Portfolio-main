@@ -29,7 +29,7 @@ const Footer = () => {
     },
     {
       icon: <Mail size={20} />,
-      url: 'munawarclaahi@gmail.com',
+      url: 'mailto:munawarclaahi@gmail.com',
       label: 'Email'
     }
   ];
