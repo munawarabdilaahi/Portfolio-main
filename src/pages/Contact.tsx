@@ -35,7 +35,7 @@ const Contact = () => {
     {
       icon: <Mail className="text-secondary" size={24} />,
       title: "Email",
-      value: "munawarclaahi@gmail.com",
+      value: "munasarclaahi@gmail.com",
       link: "mailto:munawarclaahi@gmail.com"
     },
     {
