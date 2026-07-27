@@ -90,7 +90,7 @@ const Home = () => {
                       <Linkedin size={24} />
                     </a>
                     <a
-                      href="munawarclaahi@gmail.com"
+                      href="mailto:munawarclaahi@gmail.com"
                       className="p-3 rounded-full bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                     >
                       <Mail size={24} />
