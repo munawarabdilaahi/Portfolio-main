@@ -1,6 +1,10 @@
 import { ExternalLink, Github, Eye } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import traival from '../assets/traival.png';
+import Bizpro from '../assets/Bizpro.png';
+import Dhismahomes from '../assets/Dhismahomes.png';
+import flowPilot from '../assets/Screenshot 2025-09-22 203541.png';
+import ecommerce from '../assets/Screenshot 2025-09-23 210720.png';
 
 const Projects = () => {
   const projects = [
@@ -8,7 +12,7 @@ const Projects = () => {
       id: 1,
       title: "Som Travel project",
       description: "Som Travel is a travel website designed to simplify tourism and trip planning within Somalia. It allows people to explore tourist destinations, book travel services, and access information about the most popular attractions. It was built with a modern frontend, focusing on a simple, user-friendly design and providing an excellent user experience.",
-      image: "src/assets/traival.png",
+      image: traival,
       technologies: ["React", "TypeScript", "Tailwind CSS", "Context API", "Local Storage"],
       githubUrl: "https://github.com/munawarabdilaahi/Somalia-Travel",
       liveUrl: "https://somalia-travel-ejtd.vercel.app/",
@@ -18,7 +22,7 @@ const Projects = () => {
       id: 2,
       title: "Bizpro project",
       description: "BizPro is a modern business solution platform designed to help companies grow faster. It provides services such as consulting, design, and digital marketing to support businesses in building their brand, reaching more customers, and streamlining operations. The platform is built with a clean and professional frontend, ensuring a user-friendly experience for business owners.",
-      image: "src/assets/Bizpro.png",
+      image: Bizpro,
       technologies: ["React", "TypeScript", "Drag & Drop API", "Local Storage", "Chakra UI"],
       githubUrl: "https://github.com/munawarabdilaahi/practice",
       liveUrl: "https://practice-nine-gilt.vercel.app/",
@@ -28,7 +32,7 @@ const Projects = () => {
       id: 3,
       title: "Dhismo homes website",
       description: "Dhismo Homes is a modern company specializing in the construction and design of homes.",
-      image: "src/assets/Dhismahomes.png",
+      image: Dhismahomes,
       technologies: ["React", "OpenWeather API", "Chart.js", "Geolocation"],
       githubUrl: "https://github.com/munawarabdilaahi/dhisma-homes",
       liveUrl: "https://dhisma-homes.vercel.app",
@@ -48,7 +52,7 @@ const Projects = () => {
       id: 5,
       title: "flow-pilot-project",
       description: "Design no-code workflows that route tasks, send alerts, and eliminate busywork.",
-      image: "src/assets/Screenshot 2025-09-22 203541.png",
+      image: flowPilot,
       technologies: ["HTML/CSS", "JS", "My first project"],
       githubUrl: "https://github.com/munawarabdilaahi/FlowPilot-project.",
       liveUrl: "https://flow-pilot-project-ydqf.vercel.app",
@@ -58,7 +62,7 @@ const Projects = () => {
       id: 6,
       title: "E-commerce-store",
       description: "Curated selection of the finest products for your lifestyle. Experience quality, style, and innovation in every purchase.",
-      image: "src/assets/Screenshot 2025-09-23 210720.png",
+      image: ecommerce,
       technologies: ["React", "Spoonacular API", "Redux", "Styled Components"],
       githubUrl: "https://github.com/munawarabdilaahi/e-commerce",
       liveUrl: "https://e-commerce-pi-wheat-55.vercel.app/",
