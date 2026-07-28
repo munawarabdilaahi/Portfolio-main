@@ -20,15 +20,26 @@ const PageLoader = () => (
   </div>
 );
 
+const SkipLink = () => (
+  <a
+    href="#main-content"
+    className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:outline-none"
+  >
+    Skip to main content
+  </a>
+);
+
 const App = () => (
   <TooltipProvider>
     <Toaster />
     <Sonner />
     <BrowserRouter>
+      <SkipLink />
       <div className="min-h-screen bg-background">
         <ScrollToTop />
 
         <Navigation />
+        <main id="main-content">
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -39,6 +50,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
+        </main>
         <Footer />
       </div>
     </BrowserRouter>

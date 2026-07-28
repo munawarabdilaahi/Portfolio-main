@@ -17,7 +17,7 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -34,6 +34,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
+                aria-current={isActive(item.path) ? 'page' : undefined}
                 className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
                   isActive(item.path)
                     ? 'text-primary'
@@ -52,6 +53,9 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -61,12 +65,13 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-border">
+          <div id="mobile-navigation" className="md:hidden border-t border-border" role="navigation" aria-label="Mobile navigation">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
+                  aria-current={isActive(item.path) ? 'page' : undefined}
                   onClick={() => setIsMenuOpen(false)}
                   className={`block px-3 py-2 text-base font-medium transition-all duration-300 ${
                     isActive(item.path)

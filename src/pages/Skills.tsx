@@ -109,7 +109,7 @@ const Skills = () => {
                   className="card-gradient p-4 rounded-xl text-center group hover:scale-110 transition-all duration-300 animate-slide-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="text-3xl mb-2 group-hover:scale-125 transition-transform duration-300">
+                  <div className="text-3xl mb-2 group-hover:scale-125 transition-transform duration-300" role="img" aria-label={`${tech.name} icon`}>
                     {tech.logo}
                   </div>
                   <div className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">

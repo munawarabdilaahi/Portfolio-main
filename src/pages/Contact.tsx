@@ -171,6 +171,10 @@ const Contact = () => {
                     />
                   </div>
                   
+                  <div aria-live="polite" className="sr-only">
+                    {isSubmitting ? 'Sending your message...' : ''}
+                  </div>
+                  
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -178,8 +182,8 @@ const Contact = () => {
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        Sending...
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true" />
+                        <span>Sending...</span>
                       </>
                     ) : (
                       <>

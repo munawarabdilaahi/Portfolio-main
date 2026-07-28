@@ -77,6 +77,7 @@ const Home = () => {
                       href="https://github.com/munawarabdilaahi"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="GitHub"
                       className="p-3 rounded-full bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                     >
                       <Github size={24} />
@@ -85,12 +86,14 @@ const Home = () => {
                       href="https://www.linkedin.com/in/munawar-c-laahi-335453333/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="LinkedIn"
                       className="p-3 rounded-full bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                     >
                       <Linkedin size={24} />
                     </a>
                     <a
                       href="mailto:munawarclaahi@gmail.com"
+                      aria-label="Send email"
                       className="p-3 rounded-full bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                     >
                       <Mail size={24} />
@@ -186,7 +189,7 @@ const Home = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 space-y-4">
                   <div className="w-full h-47 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
-                    <img src={traival} alt="traival" className='rounded-md' />
+                    <img src={traival} alt="Som Travel project screenshot" className='rounded-md' />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">Som Travel</h3>
                   <p className="text-muted-foreground">Explore extraordinary destinations with our premium travel packages. Create memories that last a lifetime with personalized luxury experiences.</p>
@@ -194,7 +197,7 @@ const Home = () => {
 
                 <div className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 space-y-4">
                   <div className="w-full h-47 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-lg flex items-center justify-center">
-                    <img src={Bizpro} alt="bizpro" className='rounded-md' />
+                    <img src={Bizpro} alt="BizPro business platform screenshot" className='rounded-md' />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">BizPro</h3>
                   <p className="text-muted-foreground">Accelerate your growth with BizPro — your all-in-one solution for consulting, creative design, and smart marketing strategies. Everything you need to take your business to the next level, all in one place.</p>
@@ -202,7 +205,7 @@ const Home = () => {
 
                 <div className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 space-y-4 md:col-span-2 lg:col-span-1">
                   <div className="w-full h-47 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-                    <img src={Dhismahomes} alt="dhismo" className='rounded-md' />
+                    <img src={Dhismahomes} alt="Dhisma Homes website screenshot" className='rounded-md' />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">Dhisma Homes</h3>
                   <p className="text-muted-foreground">Own a modern home in the heart of the city — a perfect choice for those who value comfort, convenience, and style. Each residence is thoughtfully designed with spacious living areas,</p>
