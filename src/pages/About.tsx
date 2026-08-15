@@ -28,16 +28,15 @@ const About = () => {
               </div>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Hello! I'm Munawar Abdullahi Hussein, a passionate frontend developer with a love for creating
-                  beautiful, functional, and user-centered web applications. My journey in technology began with
-                  curiosity about how websites work, which quickly evolved into a deep fascination with the
-                  intersection of design and development.
+                  Hello! I'm Munawar Abdullahi Hussein, a frontend developer with a passion for building
+                  beautiful, functional, and accessible web applications. My journey in technology started
+                  with curiosity about how websites work, which grew into a deep interest in the intersection
+                  of design and development.
                 </p>
                 <p>
-                  With over 5 months of experience in web development, I've had the opportunity to work on diverse
-                  projects ranging from small business websites to complex web applications. I believe in writing
-                  clean, maintainable code and creating interfaces that not only look great but provide exceptional
-                  user experiences.
+                  With over a year of hands-on experience, I've worked on projects ranging from business
+                  platforms to travel applications. I focus on writing clean, maintainable code and creating
+                  interfaces that are both visually appealing and user-friendly.
                 </p>
                 <p>
                   When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects,
@@ -54,15 +53,17 @@ const About = () => {
               </div>
               <div className="space-y-6">
                 <div className="border-l-2 border-primary pl-6">
-                  <h3 className="text-xl font-semibold mb-2">Bachelor of Science in Computer Science (Currently Studying)</h3>
-                  <p className="text-primary font-medium mb-2">University of somalia • 2024--</p>
+                  <h3 className="text-xl font-semibold mb-2">Bachelor of Science in Computer Science</h3>
+                  <p className="text-primary font-medium mb-2">University of Somalia — 2024–Present</p>
                   <p className="text-muted-foreground">
-                    I am currently studying software engineering and web development, focusing on creating beautiful and user-friendly websites. Although I don’t have much experience yet, I am eager to work on new projects and learn modern technologies. I hope to work in creative teams in the future to further develop my skills and gain valuable experience.
+                    Currently pursuing a degree in Computer Science with a focus on software engineering
+                    and web development. Building a strong foundation in algorithms, data structures,
+                    and modern development practices.
                   </p>
                 </div>
                 <div className="border-l-2 border-secondary pl-6">
                   <h3 className="text-xl font-semibold mb-2">Frontend Development Certification</h3>
-                  <p className="text-secondary font-medium mb-2">Rise acadamy • 20-09-2025</p>
+                  <p className="text-secondary font-medium mb-2">Rise Academy — September 2025</p>
                   <p className="text-muted-foreground">
                     Comprehensive program covering React, JavaScript ES6+, responsive design, and modern frontend practices.
                     Built multiple interactive web applications and mastered component-based architecture.

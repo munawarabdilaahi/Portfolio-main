@@ -126,26 +126,26 @@ const Home = () => {
 
               {/* Card 1 */}
               <div className="p-6 rounded-2xl shadow-lg bg-primary/10 hover:bg-primary/20 transition text-center space-y-2">
-                <div className="text-4xl font-extrabold text-primary">5+</div>
-                <div className="text-muted-foreground font-medium">months Experience</div>
+                <div className="text-4xl font-extrabold text-primary">1+</div>
+                <div className="text-muted-foreground font-medium">Year Experience</div>
               </div>
 
               {/* Card 2 */}
               <div className="p-6 rounded-2xl shadow-lg bg-primary/10 hover:bg-primary/20 transition text-center space-y-2">
-                <div className="text-4xl font-extrabold text-primary">5+</div>
+                <div className="text-4xl font-extrabold text-primary">6+</div>
                 <div className="text-muted-foreground font-medium">Projects Completed</div>
               </div>
 
               {/* Card 3 */}
               <div className="p-6 rounded-2xl shadow-lg bg-primary/10 hover:bg-primary/20 transition text-center space-y-2">
-                <div className="text-4xl font-extrabold text-primary">5+</div>
+                <div className="text-4xl font-extrabold text-primary">10+</div>
                 <div className="text-muted-foreground font-medium">Technologies</div>
               </div>
 
               {/* Card 4 */}
               <div className="p-6 rounded-2xl shadow-lg bg-primary/10 hover:bg-primary/20 transition text-center space-y-2">
                 <div className="text-4xl font-extrabold text-primary">100%</div>
-                <div className="text-muted-foreground font-medium">Client Satisfaction</div>
+                <div className="text-muted-foreground font-medium">Commitment</div>
               </div>
 
             </div>
@@ -160,13 +160,13 @@ const Home = () => {
               <h2 className="text-4xl font-bold text-foreground">About Me</h2>
               <div className="max-w-3xl mx-auto space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  I am a passionate Frontend Developer with 5 months of experience building modern, visually appealing,
-                  and fully responsive websites. I specialize in React, TypeScript, and modern CSS frameworks,
-                  and I constantly strive to stay up to date with the latest web technologies and best practices.
+                  I am a Frontend Developer with over a year of experience building modern, responsive,
+                  and accessible web applications. I specialize in React, TypeScript, and Tailwind CSS,
+                  and I'm committed to writing clean, maintainable code.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  I studied web development at Rise Academy, where I focused on frontend development. Currently,
-                  I am learning backend development as I work towards becoming a Full Stack Developer.
+                  Currently pursuing a degree in Computer Science at the University of Somalia while
+                  continuously expanding my skill set through hands-on projects and self-directed learning.
                 </p>
               </div>
               <Link
