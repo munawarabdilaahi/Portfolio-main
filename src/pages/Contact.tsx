@@ -11,17 +11,20 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
+    const mailtoLink = `mailto:munawarclaahi@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\n${formData.message}`)}`;
+    window.location.href = mailtoLink;
+
     setTimeout(() => {
-      alert('Thank you for your message! I\'ll get back to you soon.');
+      setSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       setIsSubmitting(false);
-    }, 1000);
+    }, 500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -35,20 +38,20 @@ const Contact = () => {
     {
       icon: <Mail className="text-secondary" size={24} />,
       title: "Email",
-      value: "munasarclaahi@gmail.com",
+      value: "munawarclaahi@gmail.com",
       link: "mailto:munawarclaahi@gmail.com"
     },
     {
       icon: <Phone className="text-secondary" size={24} />,
       title: "Phone",
-      value: "+252613697169",
-      link: "+252613697169"
+      value: "+252 613697169",
+      link: "tel:+252613697169"
     },
     {
       icon: <MapPin className="text-secondary" size={24} />,
       title: "Location",
-      value: "Mogadisho, somalia",
-      link: "https://www.google.com/maps/place/Wadajir+(Medina),+Mogadishu/@2.0156018,45.2423747,11160m/data=!3m2!1e3!4b1!4m15!1m8!3m7!1s0x3d58425955ce6b53:0xbb20eaaa52cc59d9!2sMogadishu!3b1!8m2!3d2.0372133!4d45.3379172!16zL20vMGdjbGI!3m5!1s0x3d586a1267a6f12f:0x48cba8a71d4b982e!8m2!3d2.0221232!4d45.2884807!16s%2Fg%2F1v3kfzr2!5m1!1e2?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+      value: "Mogadishu, Somalia",
+      link: "https://www.google.com/maps/place/Mogadishu/@2.0372133,45.3379172,13z"
     }
   ];
 
@@ -61,7 +64,7 @@ const Contact = () => {
     },
     {
       icon: <Linkedin size={24} />,
-      name: "LinkedIn", 
+      name: "LinkedIn",
       url: "https://www.linkedin.com/in/munawar-c-laahi-335453333/",
       color: "hover:text-blue-400"
     },
@@ -100,99 +103,120 @@ const Contact = () => {
             <div className="animate-slide-up">
               <div className="card-gradient p-8 rounded-2xl">
                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                  <Send className="text-primary" size={28} />
+                  <Send className="text-primary" size={28} aria-hidden="true" />
                   Send me a message
                 </h2>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+
+                {submitted ? (
+                  <div className="text-center py-12 space-y-4">
+                    <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto">
+                      <Mail className="text-green-500" size={32} />
+                    </div>
+                    <h3 className="text-xl font-bold">Message Ready!</h3>
+                    <p className="text-muted-foreground">
+                      Your email client should open shortly. If it doesn't, you can reach me directly at{' '}
+                      <a href="mailto:munawarclaahi@gmail.com" className="text-primary hover:underline">
+                        munawarclaahi@gmail.com
+                      </a>
+                    </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="text-primary hover:underline text-sm"
+                    >
+                      Send another message
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <label htmlFor="name" className="text-sm font-medium text-foreground">
+                          Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground placeholder-muted-foreground"
+                          placeholder="Your name"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <label htmlFor="email" className="text-sm font-medium text-foreground">
+                          Email *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground placeholder-muted-foreground"
+                          placeholder="your.email@example.com"
+                        />
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-foreground">
-                        Name *
+                      <label htmlFor="subject" className="text-sm font-medium text-foreground">
+                        Subject *
                       </label>
                       <input
                         type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground placeholder-muted-foreground"
-                        placeholder="Your name"
+                        placeholder="What's this about?"
                       />
                     </div>
-                    
+
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-foreground">
-                        Email *
+                      <label htmlFor="message" className="text-sm font-medium text-foreground">
+                        Message *
                       </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground placeholder-muted-foreground"
-                        placeholder="your.email@example.com"
+                        rows={6}
+                        className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none text-foreground placeholder-muted-foreground"
+                        placeholder="Tell me about your project..."
                       />
                     </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium text-foreground">
-                      Subject *
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-foreground placeholder-muted-foreground"
-                      placeholder="What's this about?"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium text-foreground">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none text-foreground placeholder-muted-foreground"
-                      placeholder="Tell me about your project..."
-                    />
-                  </div>
-                  
-                  <div aria-live="polite" className="sr-only">
-                    {isSubmitting ? 'Sending your message...' : ''}
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full btn-hero inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true" />
-                        <span>Sending...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Send size={18} />
-                        Send Message
-                      </>
-                    )}
-                  </button>
-                </form>
+
+                    <div aria-live="polite" className="sr-only">
+                      {isSubmitting ? 'Opening your email client...' : ''}
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full btn-hero inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true" />
+                          <span>Opening email...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send size={18} aria-hidden="true" />
+                          Send Message
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
 
@@ -201,14 +225,14 @@ const Contact = () => {
               {/* Contact Details */}
               <div className="card-gradient p-8 rounded-2xl">
                 <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-                
+
                 <div className="space-y-6">
-                  {contactInfo.map((info, index) => (
+                  {contactInfo.map((info) => (
                     <a
                       key={info.title}
                       href={info.link}
-                      target={info.link.startsWith('http') ? '_blank' : '_self'}
-                      rel={info.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                      target={info.link.startsWith('http') ? '_blank' : undefined}
+                      rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-all duration-300 hover:scale-105 group"
                     >
                       <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
@@ -228,9 +252,9 @@ const Contact = () => {
               {/* Social Links */}
               <div className="card-gradient p-8 rounded-2xl">
                 <h2 className="text-2xl font-bold mb-6">Connect With Me</h2>
-                
+
                 <div className="grid grid-cols-2 gap-4">
-                  {socialLinks.map((social, index) => (
+                  {socialLinks.map((social) => (
                     <a
                       key={social.name}
                       href={social.url}
@@ -252,7 +276,7 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold mb-4">Availability</h2>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" aria-hidden="true"></div>
                     <span className="text-foreground">Available for new projects</span>
                   </div>
                   <p className="text-muted-foreground">
@@ -264,9 +288,9 @@ const Contact = () => {
           </div>
 
           {/* FAQ Section */}
-          <section className="mt-20 text-center animate-fade-in">
-            <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
-            
+          <section className="mt-20 text-center animate-fade-in" aria-labelledby="faq-heading">
+            <h2 id="faq-heading" className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="card-gradient p-6 rounded-xl text-left hover:scale-105 transition-all duration-300">
                 <h3 className="font-bold mb-3 text-primary">What's your typical response time?</h3>
@@ -274,14 +298,14 @@ const Contact = () => {
                   I usually respond within 24 hours during business days. For urgent projects, I aim to respond within a few hours.
                 </p>
               </div>
-              
+
               <div className="card-gradient p-6 rounded-xl text-left hover:scale-105 transition-all duration-300">
                 <h3 className="font-bold mb-3 text-primary">Do you work with remote teams?</h3>
                 <p className="text-muted-foreground text-sm">
                   Absolutely! I'm experienced in remote collaboration and work with teams across different time zones.
                 </p>
               </div>
-              
+
               <div className="card-gradient p-6 rounded-xl text-left hover:scale-105 transition-all duration-300">
                 <h3 className="font-bold mb-3 text-primary">What's your project minimum?</h3>
                 <p className="text-muted-foreground text-sm">
