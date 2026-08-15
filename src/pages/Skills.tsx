@@ -15,41 +15,38 @@ const Skills = () => {
       title: "Frontend Development",
       icon: <Code className="text-primary" size={32} />,
       skills: [
-        { name: "React", level: 95, color: "from-blue-500 to-cyan-500" },
-        { name: "TypeScript", level: 90, color: "from-blue-600 to-blue-400" },
-        { name: "JavaScript", level: 95, color: "from-yellow-500 to-yellow-300" },
-        { name: "Tailwind CSS", level: 92, color: "from-teal-500 to-cyan-400" },
-        { name: "HTML5/CSS3", level: 98, color: "from-orange-500 to-red-500" }
+        { name: "React", level: 90, color: "from-blue-500 to-cyan-500" },
+        { name: "TypeScript", level: 85, color: "from-blue-600 to-blue-400" },
+        { name: "JavaScript", level: 90, color: "from-yellow-500 to-yellow-300" },
+        { name: "Tailwind CSS", level: 88, color: "from-teal-500 to-cyan-400" },
+        { name: "HTML5/CSS3", level: 95, color: "from-orange-500 to-red-500" }
       ]
     },
     {
       title: "Design & UI/UX",
       icon: <Palette className="text-secondary" size={32} />,
       skills: [
-        { name: "Figma", level: 85, color: "from-purple-500 to-pink-500" },
-        { name: "Adobe XD", level: 80, color: "from-pink-500 to-purple-500" },
-        { name: "Responsive Design", level: 95, color: "from-green-500 to-teal-500" },
-        { name: "User Experience", level: 88, color: "from-indigo-500 to-purple-500" }
+        { name: "Figma", level: 80, color: "from-purple-500 to-pink-500" },
+        { name: "Responsive Design", level: 90, color: "from-green-500 to-teal-500" },
+        { name: "User Experience", level: 82, color: "from-indigo-500 to-purple-500" }
       ]
     },
     {
       title: "State Management & APIs",
       icon: <Database className="text-primary" size={32} />,
       skills: [
-        { name: "Redux/Zustand", level: 85, color: "from-purple-600 to-purple-400" },
-        { name: "Context API", level: 92, color: "from-blue-600 to-blue-400" },
-        { name: "REST APIs", level: 88, color: "from-green-500 to-green-300" },
-        { name: "GraphQL", level: 75, color: "from-pink-500 to-pink-300" }
+        { name: "Redux", level: 80, color: "from-purple-600 to-purple-400" },
+        { name: "Context API", level: 88, color: "from-blue-600 to-blue-400" },
+        { name: "REST APIs", level: 85, color: "from-green-500 to-green-300" }
       ]
     },
     {
       title: "Tools & Technologies",
       icon: <Wrench className="text-secondary" size={32} />,
       skills: [
-        { name: "Git & GitHub", level: 92, color: "from-gray-700 to-gray-500" },
-        { name: "Vite", level: 88, color: "from-purple-600 to-purple-400" },
-        { name: "Webpack", level: 75, color: "from-blue-600 to-blue-400" },
-        { name: "Docker", level: 70, color: "from-blue-500 to-cyan-500" }
+        { name: "Git & GitHub", level: 88, color: "from-gray-700 to-gray-500" },
+        { name: "Vite", level: 85, color: "from-purple-600 to-purple-400" },
+        { name: "npm / Bun", level: 80, color: "from-red-500 to-red-400" }
       ]
     }
   ];
@@ -62,22 +59,27 @@ const Skills = () => {
     { name: "Redux", logo: "🔄" },
     { name: "Git", logo: "📦" },
     { name: "Figma", logo: "🎭" },
-    { name: "API", logo: "🔗" }
+    { name: "REST API", logo: "🔗" }
   ];
 
-  const SkillBar = ({ skill, index }: { skill: any; index: number }) => (
+  const SkillBar = ({ skill, index }: { skill: { name: string; level: number; color: string }; index: number }) => (
     <div className="space-y-2" style={{ animationDelay: `${index * 0.1}s` }}>
       <div className="flex justify-between items-center">
         <span className="font-medium">{skill.name}</span>
         <span className="text-sm text-muted-foreground">{skill.level}%</span>
       </div>
       <div className="h-2 bg-muted rounded-full overflow-hidden">
-        <div 
+        <div
           className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
-          style={{ 
+          style={{
             width: isVisible ? `${skill.level}%` : '0%',
             transitionDelay: `${index * 0.1}s`
           }}
+          role="progressbar"
+          aria-valuenow={skill.level}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label={`${skill.name}: ${skill.level}%`}
         />
       </div>
     </div>
@@ -100,11 +102,11 @@ const Skills = () => {
           </div>
 
           {/* Tech Stack Icons */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-bold text-center mb-8 animate-slide-up">Tech Stack</h2>
+          <section className="mb-20" aria-labelledby="tech-stack-heading">
+            <h2 id="tech-stack-heading" className="text-2xl font-bold text-center mb-8 animate-slide-up">Tech Stack</h2>
             <div className="grid grid-cols-4 md:grid-cols-8 gap-4 max-w-4xl mx-auto">
               {technologies.map((tech, index) => (
-                <div 
+                <div
                   key={tech.name}
                   className="card-gradient p-4 rounded-xl text-center group hover:scale-110 transition-all duration-300 animate-slide-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
@@ -121,9 +123,10 @@ const Skills = () => {
           </section>
 
           {/* Skill Categories */}
-          <section className="grid lg:grid-cols-2 gap-8 mb-20">
+          <section className="grid lg:grid-cols-2 gap-8 mb-20" aria-labelledby="skill-categories-heading">
+            <h2 id="skill-categories-heading" className="sr-only">Skill Categories</h2>
             {skillCategories.map((category, categoryIndex) => (
-              <div 
+              <div
                 key={category.title}
                 className="card-gradient p-8 rounded-2xl animate-slide-up"
                 style={{ animationDelay: `${categoryIndex * 0.2}s` }}
@@ -132,10 +135,10 @@ const Skills = () => {
                   {category.icon}
                   <h3 className="text-2xl font-bold">{category.title}</h3>
                 </div>
-                
+
                 <div className="space-y-6">
                   {category.skills.map((skill, skillIndex) => (
-                    <SkillBar 
+                    <SkillBar
                       key={skill.name}
                       skill={skill}
                       index={categoryIndex * 5 + skillIndex}
@@ -149,57 +152,56 @@ const Skills = () => {
           {/* Additional Skills */}
           <section className="text-center space-y-8 animate-fade-in">
             <h2 className="text-3xl font-bold">What I Bring to the Table</h2>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="card-gradient p-6 rounded-xl space-y-4 hover:scale-105 transition-all duration-300">
-                <Globe className="text-primary mx-auto" size={48} />
+                <Globe className="text-primary mx-auto" size={48} aria-hidden="true" />
                 <h3 className="text-xl font-bold">Modern Web Development</h3>
                 <p className="text-muted-foreground">
                   Creating responsive, accessible, and performant web applications using the latest technologies and best practices.
                 </p>
               </div>
-              
+
               <div className="card-gradient p-6 rounded-xl space-y-4 hover:scale-105 transition-all duration-300">
-                <Zap className="text-secondary mx-auto" size={48} />
+                <Zap className="text-secondary mx-auto" size={48} aria-hidden="true" />
                 <h3 className="text-xl font-bold">Performance Optimization</h3>
                 <p className="text-muted-foreground">
                   Optimizing applications for speed, SEO, and user experience through code splitting, lazy loading, and efficient bundling.
                 </p>
               </div>
-              
+
               <div className="card-gradient p-6 rounded-xl space-y-4 hover:scale-105 transition-all duration-300">
-                <Palette className="text-primary mx-auto" size={48} />
+                <Palette className="text-primary mx-auto" size={48} aria-hidden="true" />
                 <h3 className="text-xl font-bold">Design Systems</h3>
                 <p className="text-muted-foreground">
                   Building scalable design systems and component libraries that ensure consistency across large applications.
                 </p>
               </div>
             </div>
-            
+
             <div className="space-y-6 pt-8">
               <h3 className="text-2xl font-bold">Continuous Learning</h3>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Frontend technology evolves rapidly, and I'm committed to staying current with the latest React patterns, 
-                CSS techniques, and user experience best practices. I regularly experiment with new frontend frameworks, 
-                contribute to open-source projects, and follow industry leaders to ensure I can deliver modern, 
-                cutting-edge frontend solutions.
+                Frontend technology evolves rapidly, and I'm committed to staying current with the latest React patterns,
+                CSS techniques, and user experience best practices. I regularly experiment with new frameworks,
+                contribute to open-source projects, and follow industry trends.
               </p>
-              
+
               <div className="grid md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
                 <div className="text-center space-y-2">
                   <div className="text-2xl font-bold text-primary">50+</div>
                   <div className="text-sm text-muted-foreground">Components Built</div>
                 </div>
                 <div className="text-center space-y-2">
-                  <div className="text-2xl font-bold text-secondary">5+</div>
-                  <div className="text-sm text-muted-foreground">Frontend Libraries</div>
+                  <div className="text-2xl font-bold text-secondary">10+</div>
+                  <div className="text-sm text-muted-foreground">Technologies Used</div>
                 </div>
                 <div className="text-center space-y-2">
-                  <div className="text-2xl font-bold text-primary">30+</div>
-                  <div className="text-sm text-muted-foreground">GitHub Commits</div>
+                  <div className="text-2xl font-bold text-primary">6+</div>
+                  <div className="text-sm text-muted-foreground">Projects Shipped</div>
                 </div>
               </div>
-              
+
               <a href="/contact" className="btn-hero inline-flex items-center gap-2">
                 Let's Build Something Together
               </a>
