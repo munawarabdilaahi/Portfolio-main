@@ -10,8 +10,8 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Som Travel project",
-      description: "Som Travel is a travel website designed to simplify tourism and trip planning within Somalia. It allows people to explore tourist destinations, book travel services, and access information about the most popular attractions. It was built with a modern frontend, focusing on a simple, user-friendly design and providing an excellent user experience.",
+      title: "Som Travel",
+      description: "A travel platform for exploring tourist destinations and booking trips across Somalia. Features a clean UI with search functionality, destination categories, and responsive design for seamless browsing on any device.",
       image: traival,
       technologies: ["React", "TypeScript", "Tailwind CSS", "Context API", "Local Storage"],
       githubUrl: "https://github.com/munawarabdilaahi/Somalia-Travel",
@@ -20,8 +20,8 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Bizpro project",
-      description: "BizPro is a modern business solution platform designed to help companies grow faster. It provides services such as consulting, design, and digital marketing to support businesses in building their brand, reaching more customers, and streamlining operations. The platform is built with a clean and professional frontend, ensuring a user-friendly experience for business owners.",
+      title: "BizPro",
+      description: "A modern business solution platform offering consulting, creative design, and digital marketing services. Built with drag-and-drop functionality and local storage persistence for an interactive user experience.",
       image: Bizpro,
       technologies: ["React", "TypeScript", "Drag & Drop API", "Local Storage", "Chakra UI"],
       githubUrl: "https://github.com/munawarabdilaahi/practice",
@@ -30,8 +30,8 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Dhismo homes website",
-      description: "Dhismo Homes is a modern company specializing in the construction and design of homes.",
+      title: "Dhismo Homes",
+      description: "A real estate platform featuring weather integration via OpenWeather API, geolocation-based property listings, and data visualization with Chart.js for market insights.",
       image: Dhismahomes,
       technologies: ["React", "OpenWeather API", "Chart.js", "Geolocation"],
       githubUrl: "https://github.com/munawarabdilaahi/dhisma-homes",
@@ -40,28 +40,18 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Portfolio Website",
-      description: "Personal portfolio website showcasing projects and skills with smooth animations and responsive design.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "React Router"],
-      githubUrl: "https://github.com/munawar/portfolio",
-      liveUrl: "https://munawar.dev",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "flow-pilot-project",
-      description: "Design no-code workflows that route tasks, send alerts, and eliminate busywork.",
+      title: "FlowPilot",
+      description: "A workflow automation tool for designing no-code workflows that route tasks, send alerts, and streamline business processes.",
       image: flowPilot,
-      technologies: ["HTML/CSS", "JS", "My first project"],
+      technologies: ["HTML/CSS", "JavaScript"],
       githubUrl: "https://github.com/munawarabdilaahi/FlowPilot-project.",
       liveUrl: "https://flow-pilot-project-ydqf.vercel.app",
       featured: false
     },
     {
-      id: 6,
-      title: "E-commerce-store",
-      description: "Curated selection of the finest products for your lifestyle. Experience quality, style, and innovation in every purchase.",
+      id: 5,
+      title: "E-Commerce Store",
+      description: "A curated e-commerce platform featuring product search via Spoonacular API, shopping cart with Redux state management, and a polished shopping experience with styled components.",
       image: ecommerce,
       technologies: ["React", "Spoonacular API", "Redux", "Styled Components"],
       githubUrl: "https://github.com/munawarabdilaahi/e-commerce",
@@ -90,11 +80,11 @@ const Projects = () => {
           </div>
 
           {/* Featured Projects */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 animate-slide-up">Featured Projects</h2>
+          <section className="mb-20" aria-labelledby="featured-heading">
+            <h2 id="featured-heading" className="text-3xl font-bold mb-8 animate-slide-up">Featured Projects</h2>
             <div className="grid lg:grid-cols-2 gap-8">
               {featuredProjects.map((project, index) => (
-                <div
+                <article
                   key={project.id}
                   className="card-gradient rounded-2xl overflow-hidden group animate-slide-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
@@ -102,8 +92,9 @@ const Projects = () => {
                   <div className="relative overflow-hidden">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} project screenshot`}
                       className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
@@ -135,7 +126,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 bg-accent hover:bg-primary hover:text-primary-foreground rounded-lg transition-all duration-300 hover:scale-105"
                       >
-                        <Github size={18} />
+                        <Github size={18} aria-hidden="true" />
                         Code
                       </a>
                       <a
@@ -144,22 +135,22 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-glow text-primary-foreground rounded-lg transition-all duration-300 hover:scale-105"
                       >
-                        <ExternalLink size={18} />
+                        <ExternalLink size={18} aria-hidden="true" />
                         Live Demo
                       </a>
                     </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </section>
 
           {/* Other Projects */}
-          <section>
-            <h2 className="text-3xl font-bold mb-8 animate-slide-up">Other Projects</h2>
+          <section aria-labelledby="other-heading">
+            <h2 id="other-heading" className="text-3xl font-bold mb-8 animate-slide-up">Other Projects</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherProjects.map((project, index) => (
-                <div
+                <article
                   key={project.id}
                   className="card-gradient rounded-xl overflow-hidden group animate-slide-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
@@ -167,8 +158,9 @@ const Projects = () => {
                   <div className="relative overflow-hidden">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} project screenshot`}
                       className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
                     />
                   </div>
 
@@ -204,7 +196,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 px-3 py-1 text-sm bg-accent hover:bg-primary hover:text-primary-foreground rounded transition-all duration-300"
                       >
-                        <Github size={14} />
+                        <Github size={14} aria-hidden="true" />
                         Code
                       </a>
                       <a
@@ -213,12 +205,12 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 px-3 py-1 text-sm bg-primary hover:bg-primary-glow text-primary-foreground rounded transition-all duration-300"
                       >
-                        <Eye size={14} />
+                        <Eye size={14} aria-hidden="true" />
                         Demo
                       </a>
                     </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </section>
