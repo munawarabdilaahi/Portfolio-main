@@ -1,19 +1,18 @@
-// ScrollTop.js
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const ScrollTop = () => {
+const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth" // haddii aad rabto in scroll-ku uu qurux badan noqdo
+      behavior: "smooth"
     });
   }, [pathname]);
 
   return null;
 };
 
-export default ScrollTop;
+export default ScrollToTop;
