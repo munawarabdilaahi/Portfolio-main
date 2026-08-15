@@ -133,6 +133,11 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Focus visible styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
 }
 
 @layer components {
@@ -287,5 +292,32 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .page-transition {
+    animation: none;
+  }
+
+  .animate-float {
+    animation: none;
+  }
+
+  .glow-bg::before {
+    animation: none;
   }
 }
