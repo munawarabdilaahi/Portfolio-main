@@ -17,7 +17,7 @@ const Skills = () => {
       skills: [
         { name: "React", level: 90, color: "from-blue-500 to-cyan-500" },
         { name: "TypeScript", level: 85, color: "from-blue-600 to-blue-400" },
-        { name: "JavaScript", level: 90, color: "from-yellow-500 to-yellow-300" },
+        { name: "JavaScript", level: 95, color: "from-yellow-500 to-yellow-300" },
         { name: "Tailwind CSS", level: 88, color: "from-teal-500 to-cyan-400" },
         { name: "HTML5/CSS3", level: 95, color: "from-orange-500 to-red-500" }
       ]
