@@ -70,7 +70,7 @@ const Navigation = () => {
           {/* Brand Logo */}
           <Link
             to="/"
-            className="text-xl font-bold bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-lg py-1 px-1.5"
+            className="text-xl font-bold text-primary hover:scale-105 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-lg py-1 px-1.5"
           >
             Munawar
           </Link>
@@ -91,7 +91,7 @@ const Navigation = () => {
                 {item.name}
                 {isActive(item.path) && (
                   <span
-                    className="absolute bottom-0 left-2.5 right-2.5 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full animate-fade-in"
+                    className="absolute bottom-0 left-2.5 right-2.5 h-0.5 bg-primary rounded-full animate-fade-in"
                     aria-hidden="true"
                   />
                 )}

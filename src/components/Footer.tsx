@@ -35,19 +35,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-card/40 backdrop-blur-md border-t border-border/70 mt-20">
-      {/* Top ambient accent highlight */}
-      <div
-        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
-        aria-hidden="true"
-      />
+    <footer className="relative bg-card border-t border-border mt-20">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand Section */}
           <div className="md:col-span-2 space-y-4">
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold text-primary">
                 Munawar
               </h3>
               <p className="text-muted-foreground text-sm sm:text-base">
@@ -68,7 +63,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-accent/60 hover:bg-primary hover:text-primary-foreground border border-border/60 hover:border-primary/50 transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                  className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-muted text-foreground hover:bg-primary hover:text-primary-foreground border border-border transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -115,8 +110,8 @@ const Footer = () => {
             </div>
 
             <div className="pt-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-xs font-medium text-primary">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
                 <span>Available for projects</span>
               </div>
             </div>
@@ -127,14 +122,14 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-border/70 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
             <span>&copy; {currentYear} Munawar Abdullahi Hussein. Made with</span>
-            <Heart size={14} className="text-red-500 fill-red-500/30" aria-hidden="true" />
+            <Heart size={14} className="text-primary fill-primary/30" aria-hidden="true" />
             <span>using React &amp; Tailwind CSS</span>
           </div>
 
           <button
             type="button"
             onClick={scrollToTop}
-            className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-primary hover:bg-primary-glow text-primary-foreground transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
             aria-label="Back to top"
           >
             <ArrowUp size={18} aria-hidden="true" />

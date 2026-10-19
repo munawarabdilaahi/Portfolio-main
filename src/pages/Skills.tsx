@@ -1,89 +1,177 @@
-import { useState, useEffect } from 'react';
-import { Code, Palette, Database, Globe, Zap, Wrench } from 'lucide-react';
+import { Code2, Palette, Database, Wrench, Sparkles, CheckCircle2 } from 'lucide-react';
+import { SiReact, SiTypescript, SiJavascript, SiTailwindcss, SiRedux, SiGit, SiFigma, SiVite } from 'react-icons/si';
+import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 
+interface SkillItem {
+  name: string;
+  proficiency: 'Advanced' | 'Proficient' | 'Working Knowledge';
+  patterns: string;
+  evidence: string;
+}
+
+interface SkillCategory {
+  title: string;
+  description: string;
+  icon: JSX.Element;
+  skills: SkillItem[];
+}
+
 const Skills = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const skillCategories = [
+  const skillCategories: SkillCategory[] = [
     {
-      title: "Frontend Development",
-      icon: <Code className="text-primary" size={32} />,
+      title: "Core Frontend Engineering",
+      description: "Building fast, reactive, and type-safe client-side web architectures.",
+      icon: <Code2 className="text-primary" size={28} />,
       skills: [
-        { name: "React", level: 90, color: "from-blue-500 to-cyan-500" },
-        { name: "TypeScript", level: 85, color: "from-blue-600 to-blue-400" },
-        { name: "JavaScript", level: 95, color: "from-yellow-500 to-yellow-300" },
-        { name: "Tailwind CSS", level: 88, color: "from-teal-500 to-cyan-400" },
-        { name: "HTML5/CSS3", level: 95, color: "from-orange-500 to-red-500" }
+        {
+          name: "React (v18+)",
+          proficiency: "Advanced",
+          patterns: "Custom hooks, compound components, code splitting, concurrent rendering",
+          evidence: "Implemented across Som Travel, BizPro, and Dhismo Homes"
+        },
+        {
+          name: "TypeScript",
+          proficiency: "Proficient",
+          patterns: "Strict typing, generics, interfaces, discriminated unions, utility types",
+          evidence: "Type-safe architectures in full React codebases"
+        },
+        {
+          name: "JavaScript (ES6+)",
+          proficiency: "Advanced",
+          patterns: "Async/await, closures, array methods, DOM APIs, event loop",
+          evidence: "Interactive application logic and state workflows"
+        },
+        {
+          name: "Tailwind CSS",
+          proficiency: "Advanced",
+          patterns: "Design tokens, responsive utility classes, custom animation config, dark theme",
+          evidence: "Primary CSS system for all production portfolio projects"
+        },
+        {
+          name: "HTML5 & Semantic Markup",
+          proficiency: "Advanced",
+          patterns: "Accessible landmarks, ARIA standards, SEO structure, keyboard navigation",
+          evidence: "Full WCAG accessibility audit compliance across apps"
+        }
       ]
     },
     {
-      title: "Design & UI/UX",
-      icon: <Palette className="text-secondary" size={32} />,
+      title: "State, Architecture & APIs",
+      description: "Managing deterministic client state and seamless external API data layers.",
+      icon: <Database className="text-primary" size={28} />,
       skills: [
-        { name: "Figma", level: 80, color: "from-purple-500 to-pink-500" },
-        { name: "Responsive Design", level: 90, color: "from-green-500 to-teal-500" },
-        { name: "User Experience", level: 82, color: "from-indigo-500 to-purple-500" }
+        {
+          name: "React Context & Custom State",
+          proficiency: "Proficient",
+          patterns: "Global theme, auth state, local persistence via localStorage",
+          evidence: "Core application store for Som Travel and BizPro"
+        },
+        {
+          name: "Redux Toolkit",
+          proficiency: "Working Knowledge",
+          patterns: "Slices, action creators, immutable state updates, middleware",
+          evidence: "E-Commerce Store cart and catalog management"
+        },
+        {
+          name: "REST API Integration",
+          proficiency: "Proficient",
+          patterns: "Async fetching, error boundary handling, loading states, payload parsing",
+          evidence: "Integrated OpenWeather, Geolocation, and Spoonacular endpoints"
+        },
+        {
+          name: "Client-Side Routing",
+          proficiency: "Advanced",
+          patterns: "React Router v6, nested layouts, protected routes, scroll restoration",
+          evidence: "SPA navigation across all multi-page web applications"
+        }
       ]
     },
     {
-      title: "State Management & APIs",
-      icon: <Database className="text-primary" size={32} />,
+      title: "Tooling & Build Ecosystem",
+      description: "Modern developer tooling for optimized compilation and version control.",
+      icon: <Wrench className="text-primary" size={28} />,
       skills: [
-        { name: "Redux", level: 80, color: "from-purple-600 to-purple-400" },
-        { name: "Context API", level: 88, color: "from-blue-600 to-blue-400" },
-        { name: "REST APIs", level: 85, color: "from-green-500 to-green-300" }
+        {
+          name: "Git & GitHub",
+          proficiency: "Proficient",
+          patterns: "Branch management, semantic commits, PR reviews, merge conflict resolution",
+          evidence: "Active daily version control on GitHub: munawarabdilaahi"
+        },
+        {
+          name: "Vite & Tooling",
+          proficiency: "Proficient",
+          patterns: "Fast HMR, SWC compiler plugins, asset bundling, build optimization",
+          evidence: "Zero-config development and production packaging setup"
+        },
+        {
+          name: "Package Managers",
+          proficiency: "Proficient",
+          patterns: "npm, Bun, dependency resolution, lockfile synchronization",
+          evidence: "Modular package setup across all applications"
+        }
       ]
     },
     {
-      title: "Tools & Technologies",
-      icon: <Wrench className="text-secondary" size={32} />,
+      title: "UI/UX & Product Design",
+      description: "Bridging the gap between design prototypes and production code.",
+      icon: <Palette className="text-primary" size={28} />,
       skills: [
-        { name: "Git & GitHub", level: 88, color: "from-gray-700 to-gray-500" },
-        { name: "Vite", level: 85, color: "from-purple-600 to-purple-400" },
-        { name: "npm / Bun", level: 80, color: "from-red-500 to-red-400" }
+        {
+          name: "Figma to Code",
+          proficiency: "Proficient",
+          patterns: "Translating auto-layout, spacing tokens, typography scales into code",
+          evidence: "Implemented pixel-accurate web applications from design files"
+        },
+        {
+          name: "Responsive & Adaptive Design",
+          proficiency: "Advanced",
+          patterns: "Mobile-first layouts, breakpoint testing, fluid typography, touch targets",
+          evidence: "Tested and verified across mobile, tablet, and desktop viewports"
+        },
+        {
+          name: "Design Systems & Tokens",
+          proficiency: "Proficient",
+          patterns: "Reusable UI component primitives, color token palettes, atomic styling",
+          evidence: "Shared design token architecture in index.css and Tailwind config"
+        }
       ]
     }
   ];
 
   const technologies = [
-    { name: "React", logo: "⚛️" },
-    { name: "TypeScript", logo: "🔷" },
-    { name: "JavaScript", logo: "💛" },
-    { name: "Tailwind", logo: "🎨" },
-    { name: "Redux", logo: "🔄" },
-    { name: "Git", logo: "📦" },
-    { name: "Figma", logo: "🎭" },
-    { name: "REST API", logo: "🔗" }
+    { name: "React", icon: <SiReact className="text-[#61DAFB]" size={32} /> },
+    { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" size={32} /> },
+    { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E]" size={32} /> },
+    { name: "Tailwind", icon: <SiTailwindcss className="text-[#06B6D4]" size={32} /> },
+    { name: "Redux", icon: <SiRedux className="text-[#764ABC]" size={32} /> },
+    { name: "Git", icon: <SiGit className="text-[#F05032]" size={32} /> },
+    { name: "Figma", icon: <SiFigma className="text-[#F24E1E]" size={32} /> },
+    { name: "Vite", icon: <SiVite className="text-[#646CFF]" size={32} /> }
   ];
 
-  const SkillBar = ({ skill, index }: { skill: { name: string; level: number; color: string }; index: number }) => (
-    <div className="space-y-2" style={{ animationDelay: `${index * 0.1}s` }}>
-      <div className="flex justify-between items-center">
-        <span className="font-medium">{skill.name}</span>
-        <span className="text-sm text-muted-foreground">{skill.level}%</span>
-      </div>
-      <div className="h-2 bg-muted rounded-full overflow-hidden">
-        <div
-          className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
-          style={{
-            width: isVisible ? `${skill.level}%` : '0%',
-            transitionDelay: `${index * 0.1}s`
-          }}
-          role="progressbar"
-          aria-valuenow={skill.level}
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-label={`${skill.name}: ${skill.level}%`}
-        />
-      </div>
-    </div>
-  );
+  const getProficiencyBadge = (level: SkillItem['proficiency']) => {
+    switch (level) {
+      case 'Advanced':
+        return (
+          <span className="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            Advanced
+          </span>
+        );
+      case 'Proficient':
+        return (
+          <span className="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-primary/15 text-primary border border-primary/25">
+            Proficient
+          </span>
+        );
+      case 'Working Knowledge':
+        return (
+          <span className="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-muted text-muted-foreground border border-border">
+            Working Knowledge
+          </span>
+        );
+    }
+  };
 
   return (
     <PageTransition>
@@ -91,30 +179,35 @@ const Skills = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold uppercase tracking-wider text-primary mb-4">
+              <Sparkles size={14} aria-hidden="true" />
+              <span>Evidence-Based Technical Proficiency</span>
+            </div>
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="text-primary">
                 Skills & Technologies
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive overview of my technical expertise and the tools I use to create amazing digital experiences
+              A structured breakdown of my technical stack, key implementation patterns, and real project evidence.
             </p>
           </div>
 
           {/* Tech Stack Icons */}
           <section className="mb-20" aria-labelledby="tech-stack-heading">
-            <h2 id="tech-stack-heading" className="text-2xl font-bold text-center mb-8 animate-slide-up">Tech Stack</h2>
-            <div className="grid grid-cols-4 md:grid-cols-8 gap-4 max-w-4xl mx-auto">
-              {technologies.map((tech, index) => (
+            <h2 id="tech-stack-heading" className="text-sm font-mono uppercase tracking-wider text-center text-muted-foreground mb-8">
+              Core Technologies in Active Production
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 max-w-4xl mx-auto">
+              {technologies.map((tech) => (
                 <div
                   key={tech.name}
-                  className="card-gradient p-4 rounded-xl text-center group hover:scale-110 transition-all duration-300 animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="card-surface p-4 rounded-xl text-center flex flex-col items-center justify-center gap-2 border border-border hover:border-primary/50 transition-all duration-300 group"
                 >
-                  <div className="text-3xl mb-2 group-hover:scale-125 transition-transform duration-300" role="img" aria-label={`${tech.name} icon`}>
-                    {tech.logo}
+                  <div className="group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                    {tech.icon}
                   </div>
-                  <div className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                  <div className="text-xs font-medium text-foreground">
                     {tech.name}
                   </div>
                 </div>
@@ -122,89 +215,90 @@ const Skills = () => {
             </div>
           </section>
 
-          {/* Skill Categories */}
-          <section className="grid lg:grid-cols-2 gap-8 mb-20" aria-labelledby="skill-categories-heading">
-            <h2 id="skill-categories-heading" className="sr-only">Skill Categories</h2>
-            {skillCategories.map((category, categoryIndex) => (
-              <div
-                key={category.title}
-                className="card-gradient p-8 rounded-2xl animate-slide-up"
-                style={{ animationDelay: `${categoryIndex * 0.2}s` }}
-              >
-                <div className="flex items-center gap-3 mb-8">
-                  {category.icon}
-                  <h3 className="text-2xl font-bold">{category.title}</h3>
-                </div>
+          {/* Detailed Skill Categories */}
+          <section className="space-y-10 mb-20" aria-labelledby="skill-categories-heading">
+            <h2 id="skill-categories-heading" className="text-2xl sm:text-3xl font-bold">
+              Capabilities & Practical Patterns
+            </h2>
 
-                <div className="space-y-6">
-                  {category.skills.map((skill, skillIndex) => (
-                    <SkillBar
-                      key={skill.name}
-                      skill={skill}
-                      index={categoryIndex * 5 + skillIndex}
-                    />
-                  ))}
+            <div className="grid lg:grid-cols-2 gap-8">
+              {skillCategories.map((category, categoryIndex) => (
+                <div
+                  key={category.title}
+                  className="card-surface p-6 sm:p-8 rounded-2xl border border-border hover:border-primary/40 transition-all duration-300 animate-slide-up flex flex-col justify-between"
+                  style={{ animationDelay: `${categoryIndex * 0.1}s` }}
+                >
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        {category.icon}
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-6">
+                      {category.description}
+                    </p>
+
+                    <div className="space-y-4">
+                      {category.skills.map((skill) => (
+                        <div
+                          key={skill.name}
+                          className="p-4 rounded-xl bg-muted/40 border border-border/70 space-y-2 hover:bg-muted/70 transition-colors"
+                        >
+                          <div className="flex items-center justify-between gap-2 flex-wrap">
+                            <span className="font-semibold text-foreground text-sm flex items-center gap-2">
+                              <CheckCircle2 size={16} className="text-primary" aria-hidden="true" />
+                              {skill.name}
+                            </span>
+                            {getProficiencyBadge(skill.proficiency)}
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            <span className="font-medium text-foreground/80">Patterns: </span>
+                            {skill.patterns}
+                          </p>
+                          <p className="text-xs text-primary/90 font-mono">
+                            ↳ {skill.evidence}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </section>
 
-          {/* Additional Skills */}
-          <section className="text-center space-y-8 animate-fade-in">
-            <h2 className="text-3xl font-bold">What I Bring to the Table</h2>
+          {/* Engineering Approach */}
+          <section className="text-center space-y-8 animate-fade-in card-surface p-8 sm:p-12 rounded-2xl border border-border">
+            <h2 className="text-2xl sm:text-3xl font-bold">Engineering Standards</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
+              My approach prioritizes maintainable component architecture, accessible UI landmarks, and high performance rather than just ticking feature checkboxes.
+            </p>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="card-gradient p-6 rounded-xl space-y-4 hover:scale-105 transition-all duration-300">
-                <Globe className="text-primary mx-auto" size={48} aria-hidden="true" />
-                <h3 className="text-xl font-bold">Modern Web Development</h3>
-                <p className="text-muted-foreground">
-                  Creating responsive, accessible, and performant web applications using the latest technologies and best practices.
-                </p>
+            <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto pt-4">
+              <div className="p-4 rounded-xl bg-background border border-border/80 text-left space-y-2">
+                <div className="text-2xl font-bold text-primary">6+</div>
+                <div className="text-sm font-semibold text-foreground">Shipped Projects</div>
+                <p className="text-xs text-muted-foreground">End-to-end applications deployed with responsive layouts and real user testing.</p>
               </div>
 
-              <div className="card-gradient p-6 rounded-xl space-y-4 hover:scale-105 transition-all duration-300">
-                <Zap className="text-secondary mx-auto" size={48} aria-hidden="true" />
-                <h3 className="text-xl font-bold">Performance Optimization</h3>
-                <p className="text-muted-foreground">
-                  Optimizing applications for speed, SEO, and user experience through code splitting, lazy loading, and efficient bundling.
-                </p>
+              <div className="p-4 rounded-xl bg-background border border-border/80 text-left space-y-2">
+                <div className="text-2xl font-bold text-primary">100%</div>
+                <div className="text-sm font-semibold text-foreground">Type Safety & WCAG</div>
+                <p className="text-xs text-muted-foreground">Strict TypeScript interfaces, accessible color contrast, and keyboard navigation.</p>
               </div>
 
-              <div className="card-gradient p-6 rounded-xl space-y-4 hover:scale-105 transition-all duration-300">
-                <Palette className="text-primary mx-auto" size={48} aria-hidden="true" />
-                <h3 className="text-xl font-bold">Design Systems</h3>
-                <p className="text-muted-foreground">
-                  Building scalable design systems and component libraries that ensure consistency across large applications.
-                </p>
+              <div className="p-4 rounded-xl bg-background border border-border/80 text-left space-y-2">
+                <div className="text-2xl font-bold text-primary">&lt;1s</div>
+                <div className="text-sm font-semibold text-foreground">Fast Loading Goals</div>
+                <p className="text-xs text-muted-foreground">Code splitting, modern image formats, and minimal bundle sizes via Vite.</p>
               </div>
             </div>
 
-            <div className="space-y-6 pt-8">
-              <h3 className="text-2xl font-bold">Continuous Learning</h3>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Frontend technology evolves rapidly, and I'm committed to staying current with the latest React patterns,
-                CSS techniques, and user experience best practices. I regularly experiment with new frameworks,
-                contribute to open-source projects, and follow industry trends.
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
-                <div className="text-center space-y-2">
-                  <div className="text-2xl font-bold text-primary">50+</div>
-                  <div className="text-sm text-muted-foreground">Components Built</div>
-                </div>
-                <div className="text-center space-y-2">
-                  <div className="text-2xl font-bold text-secondary">10+</div>
-                  <div className="text-sm text-muted-foreground">Technologies Used</div>
-                </div>
-                <div className="text-center space-y-2">
-                  <div className="text-2xl font-bold text-primary">6+</div>
-                  <div className="text-sm text-muted-foreground">Projects Shipped</div>
-                </div>
-              </div>
-
-              <a href="/contact" className="btn-hero inline-flex items-center gap-2">
-                Let's Build Something Together
-              </a>
+            <div className="pt-6">
+              <Link to="/contact" className="btn-hero inline-flex items-center gap-2">
+                Let's Build Together
+              </Link>
             </div>
           </section>
         </div>

@@ -1,4 +1,5 @@
 import { GraduationCap, Target, Heart, Code2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 
 const About = () => {
@@ -9,7 +10,7 @@ const About = () => {
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="text-primary">
                 About Me
               </span>
             </h1>
@@ -21,7 +22,7 @@ const About = () => {
           {/* Main Content */}
           <div className="space-y-16">
             {/* Background */}
-            <section className="card-gradient p-8 rounded-2xl animate-slide-up">
+            <section className="card-surface p-8 rounded-2xl animate-slide-up">
               <div className="flex items-center gap-3 mb-6">
                 <Code2 className="text-primary" size={32} />
                 <h2 className="text-2xl font-bold">My Background</h2>
@@ -46,7 +47,7 @@ const About = () => {
             </section>
 
             {/* Education */}
-            <section className="card-gradient p-8 rounded-2xl animate-slide-up">
+            <section className="card-surface p-8 rounded-2xl animate-slide-up">
               <div className="flex items-center gap-3 mb-6">
                 <GraduationCap className="text-primary" size={32} />
                 <h2 className="text-2xl font-bold">Education</h2>
@@ -61,9 +62,9 @@ const About = () => {
                     and modern development practices.
                   </p>
                 </div>
-                <div className="border-l-2 border-secondary pl-6">
+                <div className="border-l-2 border-primary pl-6">
                   <h3 className="text-xl font-semibold mb-2">Frontend Development Certification</h3>
-                  <p className="text-secondary font-medium mb-2">Rise Academy — September 2025</p>
+                  <p className="text-primary font-medium mb-2">Rise Academy — September 2025</p>
                   <p className="text-muted-foreground">
                     Comprehensive program covering React, JavaScript ES6+, responsive design, and modern frontend practices.
                     Built multiple interactive web applications and mastered component-based architecture.
@@ -82,7 +83,7 @@ const About = () => {
 
             {/* Goals & Values */}
             <div className="grid md:grid-cols-2 gap-8">
-              <section className="card-gradient p-8 rounded-2xl animate-slide-up">
+              <section className="card-surface p-8 rounded-2xl animate-slide-up">
                 <div className="flex items-center gap-3 mb-6">
                   <Target className="text-primary" size={32} />
                   <h2 className="text-2xl font-bold">Goals</h2>
@@ -115,34 +116,34 @@ const About = () => {
                 </ul>
               </section>
 
-              <section className="card-gradient p-8 rounded-2xl animate-slide-up">
+              <section className="card-surface p-8 rounded-2xl animate-slide-up">
                 <div className="flex items-center gap-3 mb-6">
-                  <Heart className="text-secondary" size={32} />
+                  <Heart className="text-primary" size={32} />
                   <h2 className="text-2xl font-bold">What I Love</h2>
                 </div>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                     Creating seamless user experiences
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                     Solving complex problems with elegant solutions
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                     Learning new frontend technologies and frameworks
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                     Writing clean, maintainable code
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                     Collaborating with creative, passionate teams
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                     Turning design mockups into pixel-perfect interfaces
                   </li>
                 </ul>
@@ -157,15 +158,15 @@ const About = () => {
                 Let's create something amazing together!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="btn-hero inline-flex items-center gap-2">
+                <Link to="/contact" className="btn-hero inline-flex items-center gap-2">
                   Get In Touch
-                </a>
-                <a
-                  href="/projects"
+                </Link>
+                <Link
+                  to="/projects"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-border rounded-xl text-foreground hover:bg-accent transition-all duration-300 hover:scale-105"
                 >
                   View My Work
-                </a>
+                </Link>
               </div>
             </section>
           </div>
