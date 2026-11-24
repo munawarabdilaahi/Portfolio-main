@@ -1,0 +1,446 @@
+{
+  "profile": {
+    "full_name": "Munawar Abdullahi Hussein",
+    "professional_title": "Frontend Developer",
+    "specialization": "React & TypeScript Specialist",
+    "location": {
+      "city": "Mogadishu",
+      "country": "Somalia",
+      "timezone": "UTC+3",
+      "remote_availability": "Available for Global Remote"
+    },
+    "contact": {
+      "email": "munawarclaahi@gmail.com",
+      "phone": "+252 613697169",
+      "response_time": "< 24 Hours"
+    },
+    "social": {
+      "github": {
+        "url": "https://github.com/munawarabdilaahi",
+        "username": "munawarabdilaahi"
+      },
+      "linkedin": {
+        "url": "https://www.linkedin.com/in/munawar-c-laahi-335453333/",
+        "username": "Munawar Abdullahi"
+      },
+      "twitter": {
+        "url": "https://twitter.com/@munawarc78672",
+        "username": "@munawarc78672"
+      },
+      "discord": {
+        "url": "https://discord.com/users/munawar",
+        "username": "munawar"
+      }
+    },
+    "availability": "Available for Freelance & Full-Time Roles"
+  },
+  "professional_summary": "Frontend developer specializing in React, TypeScript, and modern web technologies. Focuses on creating accessible, performant, and visually compelling web applications with clean architecture and strict type safety.",
+  "skills": {
+    "frontend": [
+      {
+        "name": "React",
+        "version": "18.3.1",
+        "proficiency": "Advanced",
+        "evidence": "Used across the entire application with code splitting, custom hooks, and concurrent features"
+      },
+      {
+        "name": "TypeScript",
+        "version": "5.8.3",
+        "proficiency": "Proficient",
+        "evidence": "Strict typing configuration with zero compiler errors across entire codebase"
+      },
+      {
+        "name": "JavaScript (ES6+)",
+        "proficiency": "Advanced",
+        "evidence": "Asynchronous flows, closures, and custom DOM handling"
+      },
+      {
+        "name": "Tailwind CSS",
+        "version": "3.4.17",
+        "proficiency": "Advanced",
+        "evidence": "Comprehensive design token system and responsive layout styling"
+      },
+      {
+        "name": "HTML5 & Semantic Markup",
+        "proficiency": "Advanced",
+        "evidence": "Accessible semantic structure, ARIA landmarks, and keyboard skip-link navigation"
+      }
+    ],
+    "backend": [],
+    "languages": [
+      "TypeScript",
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "frameworks": [
+      "React",
+      "React Router DOM",
+      "Tailwind CSS"
+    ],
+    "databases": [
+      "Browser LocalStorage"
+    ],
+    "tools": [
+      "Vite",
+      "Git",
+      "GitHub",
+      "npm",
+      "Bun",
+      "PostCSS",
+      "Autoprefixer",
+      "ESLint",
+      "Figma"
+    ],
+    "other": [
+      "REST API Integration",
+      "Redux Toolkit",
+      "Chart.js",
+      "OpenWeather API",
+      "Spoonacular API",
+      "Lucide Icons",
+      "React Icons",
+      "WCAG Accessibility"
+    ]
+  },
+  "education": [
+    {
+      "institution": "University of Somalia",
+      "degree": "Bachelor of Science",
+      "field_of_study": "Computer Science",
+      "dates": "2024–Present",
+      "status": "In Progress",
+      "focus": "Software engineering, algorithms, data structures, and web development"
+    }
+  ],
+  "experience": [
+    {
+      "job_title": "Frontend Developer",
+      "organization": "Independent / Production Work",
+      "dates": "1+ Years (2024–Present)",
+      "responsibilities": "Building responsive SaaS dashboards, tourism booking platforms, and data-driven web applications",
+      "achievements": "Shipped 5+ accessible production web applications using React and TypeScript"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Frontend Development Certification",
+      "issuer": "Rise Academy",
+      "date": "September 2025",
+      "status": "Verified in portfolio text"
+    },
+    {
+      "name": "Google UX Design Certificate",
+      "issuer": "Google / Coursera",
+      "date": "2025",
+      "status": "Verified in portfolio text"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "Professional / Fluent",
+      "status": "Verified (portfolio authored in English)"
+    },
+    {
+      "language": "Somali",
+      "proficiency": "Native / Fluent",
+      "status": "Inferred (location Mogadishu, Somalia & Somali commit message)"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Som Travel",
+      "category": "Tourism & Booking Platform",
+      "role": "Lead Frontend Developer",
+      "description": "Travel discovery and booking platform showcasing destination packages across Somalia with intuitive search, category filters, and an accessible mobile-first interface.",
+      "outcome": "Delivered interactive multi-destination search and state management using React Context API.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Context API",
+        "Local Storage"
+      ],
+      "github_url": "https://github.com/munawarabdilaahi/Somalia-Travel",
+      "live_url": "https://somalia-travel-ejtd.vercel.app/",
+      "featured": true,
+      "status": "Deployed on Vercel"
+    },
+    {
+      "id": 2,
+      "name": "BizPro",
+      "category": "Business Solutions SaaS",
+      "role": "Frontend Developer & UI Designer",
+      "description": "An all-in-one business growth platform for consulting, creative services, and marketing strategy with drag-and-drop workspace capabilities and persistent client-side storage.",
+      "outcome": "Designed interactive drag-and-drop board with persistent localStorage state.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Drag & Drop API",
+        "Local Storage",
+        "Chakra UI"
+      ],
+      "github_url": "https://github.com/munawarabdilaahi/practice",
+      "live_url": "https://practice-nine-gilt.vercel.app/",
+      "featured": true,
+      "status": "Deployed on Vercel"
+    },
+    {
+      "id": 3,
+      "name": "Dhismo Homes",
+      "category": "PropTech & Data Visuals",
+      "role": "Frontend Developer",
+      "description": "A modern real estate application featuring live weather conditions via OpenWeather API, geolocation-assisted listings, and visual price analytics with Chart.js.",
+      "outcome": "Integrated live weather and geolocation APIs with responsive Chart.js data visualizations.",
+      "technologies": [
+        "React",
+        "OpenWeather API",
+        "Chart.js",
+        "Geolocation",
+        "Tailwind CSS"
+      ],
+      "github_url": "https://github.com/munawarabdilaahi/dhisma-homes",
+      "live_url": "https://dhisma-homes.vercel.app",
+      "featured": true,
+      "status": "Deployed on Vercel"
+    },
+    {
+      "id": 4,
+      "name": "FlowPilot",
+      "category": "Automation & Workflows",
+      "role": "Frontend Developer",
+      "description": "A no-code workflow automation interface allowing users to visually structure task routing, send notifications, and monitor operational pipelines.",
+      "outcome": "Built accessible interactive UI for rapid workflow stage construction.",
+      "technologies": [
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "DOM Manipulation"
+      ],
+      "github_url": "https://github.com/munawarabdilaahi/FlowPilot-project",
+      "live_url": "https://flow-pilot-project-ydqf.vercel.app",
+      "featured": false,
+      "status": "Deployed on Vercel"
+    },
+    {
+      "id": 5,
+      "name": "E-Commerce Store",
+      "category": "Retail & Culinary Products",
+      "role": "Frontend Developer",
+      "description": "A modern online shopping experience featuring dynamic recipe & ingredient catalog search powered by Spoonacular API, Redux cart management, and custom styled components.",
+      "outcome": "Implemented full Redux state cycle for cart management and external API catalog search.",
+      "technologies": [
+        "React",
+        "Redux Toolkit",
+        "Spoonacular API",
+        "Styled Components"
+      ],
+      "github_url": "https://github.com/munawarabdilaahi/e-commerce",
+      "live_url": "https://e-commerce-pi-wheat-55.vercel.app/",
+      "featured": false,
+      "status": "Deployed on Vercel"
+    }
+  ],
+  "website": {
+    "domain": "https://munawar.dev",
+    "pages": [
+      {
+        "path": "/",
+        "name": "Home",
+        "purpose": "Hero value proposition, process workflow, selected projects, tech foundation preview, contact callout"
+      },
+      {
+        "path": "/about",
+        "name": "About",
+        "purpose": "Personal background, education credentials, career goals, personal values"
+      },
+      {
+        "path": "/projects",
+        "name": "Projects",
+        "purpose": "Showcase of 3 featured case studies and 2 additional implementations with live links and code links"
+      },
+      {
+        "path": "/skills",
+        "name": "Skills",
+        "purpose": "Active production technology matrix, 4 deep capability categories, engineering standards metrics"
+      },
+      {
+        "path": "/contact",
+        "name": "Contact",
+        "purpose": "Interactive contact form drafting mailto links, copyable direct channels, social profile links"
+      },
+      {
+        "path": "*",
+        "name": "NotFound",
+        "purpose": "Design-system aligned 404 error page with navigation back to home"
+      }
+    ],
+    "features": [
+      "Dark theme design system with semantic HSL CSS tokens",
+      "Skip to main content accessibility link",
+      "Top-level React Error Boundary for failure recovery",
+      "Route-level lazy loading with suspense spinner",
+      "Responsive navigation bar with blur effect and mobile drawer",
+      "Prefers-reduced-motion media query support",
+      "Copy-to-clipboard for email and phone numbers",
+      "ScrollToTop behavior on route changes"
+    ],
+    "social_links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/munawarabdilaahi"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/munawar-c-laahi-335453333/"
+      },
+      {
+        "name": "Twitter / X",
+        "url": "https://twitter.com/@munawarc78672"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.com/users/munawar"
+      }
+    ]
+  },
+  "technology_stack": [
+    {
+      "name": "React",
+      "version": "18.3.1",
+      "category": "Frontend UI Library"
+    },
+    {
+      "name": "TypeScript",
+      "version": "5.8.3",
+      "category": "Language / Type System"
+    },
+    {
+      "name": "Vite",
+      "version": "5.4.19",
+      "category": "Build Tool & Bundler"
+    },
+    {
+      "name": "Tailwind CSS",
+      "version": "3.4.17",
+      "category": "CSS Utility Framework"
+    },
+    {
+      "name": "React Router DOM",
+      "version": "6.30.1",
+      "category": "Client-Side Routing"
+    },
+    {
+      "name": "Lucide React",
+      "version": "0.462.0",
+      "category": "Icon System"
+    },
+    {
+      "name": "React Icons",
+      "version": "5.5.0",
+      "category": "Icon System"
+    }
+  ],
+  "verified_facts": [
+    "Full name is Munawar Abdullahi Hussein",
+    "Professional title is Frontend Developer",
+    "Developer is currently pursuing a Bachelor of Science in Computer Science at the University of Somalia (2024–Present)",
+    "Holds a Frontend Development Certification from Rise Academy (September 2025)",
+    "Holds a Google UX Design Certificate (2025)",
+    "Located in Mogadishu, Somalia (UTC+3, open to remote)",
+    "Direct contact channels are munawarclaahi@gmail.com and +252 613697169",
+    "Showcases 5 deployed projects on Vercel with matching GitHub repositories",
+    "Codebase compiles cleanly with zero TypeScript errors under strict type checking"
+  ],
+  "inferred_facts": [
+    "Developer speaks Somali in addition to English based on Mogadishu location and Somali commit message 'isbadal cusub'",
+    "Repository was originally bootstrapped using Lovable scaffolding based on root README.md"
+  ],
+  "missing_information": [
+    "Specific corporate employers or commercial agency client names (work history is presented via projects)",
+    "Public og-image.png asset referenced in index.html is missing from public directory",
+    "Project count in badges claims '6+ Shipped Apps' while only 5 are showcased",
+    "Direct external verification links or credential IDs for certificates",
+    "Downloadable PDF résumé or curriculum vitae",
+    "Spoken languages section"
+  ],
+  "audit_scores": {
+    "visual_design": 8.5,
+    "ui_consistency": 8.5,
+    "ux": 7.5,
+    "responsive_design": 8.5,
+    "code_quality": 8.0,
+    "architecture": 7.5,
+    "performance": 6.5,
+    "seo": 7.0,
+    "accessibility": 8.5,
+    "security": 8.5,
+    "project_presentation": 7.5,
+    "professional_branding": 7.5,
+    "overall_score": 7.8
+  },
+  "improvement_roadmap": [
+    {
+      "priority": "P0",
+      "title": "Fix Missing Social Share Image (og-image.png)",
+      "impact": "Resolves 404 image errors when sharing portfolio on social media",
+      "complexity": "Low"
+    },
+    {
+      "priority": "P0",
+      "title": "Optimize and Compress PNG Image Assets",
+      "impact": "Reduces network image transfer payload by ~6MB (80%+ reduction)",
+      "complexity": "Low"
+    },
+    {
+      "priority": "P0",
+      "title": "Fix Twitter URL Syntax",
+      "impact": "Removes invalid '@' character in URL path in Contact page",
+      "complexity": "Low"
+    },
+    {
+      "priority": "P1",
+      "title": "Replace Generic Lovable README with Portfolio Documentation",
+      "impact": "Significantly improves repository presentation for recruiters and engineers",
+      "complexity": "Medium"
+    },
+    {
+      "priority": "P1",
+      "title": "Centralize Project and Skill Data into Single Source of Truth",
+      "impact": "Eliminates duplicate code and simplifies maintenance",
+      "complexity": "Medium"
+    },
+    {
+      "priority": "P1",
+      "title": "Add Dynamic Page Titles & Meta Descriptions",
+      "impact": "Improves browser tab usability and per-page search engine indexing",
+      "complexity": "Low"
+    },
+    {
+      "priority": "P2",
+      "title": "Clean Dead Dependencies and Unused Scaffolding Components",
+      "impact": "Reduces node_modules footprint and eliminates ESLint warning",
+      "complexity": "Low"
+    },
+    {
+      "priority": "P2",
+      "title": "Upgrade Contact Form to Headless API Endpoint",
+      "impact": "Removes reliance on client-side mail client configuration",
+      "complexity": "Medium"
+    },
+    {
+      "priority": "P2",
+      "title": "Add Downloadable Résumé PDF",
+      "impact": "Provides high-intent recruiter shortcut",
+      "complexity": "Low"
+    },
+    {
+      "priority": "P3",
+      "title": "Self-Host Inter Font and Add JSON-LD Schema",
+      "impact": "Optimizes Core Web Vitals and enhances Google search rich results",
+      "complexity": "Medium"
+    }
+  ]
+}
